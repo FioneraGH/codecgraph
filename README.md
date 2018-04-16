@@ -1,6 +1,6 @@
 # codecgraph
 
-### Brief
+## Brief
 
 A HDA codec graph generator from [helllabs](http://helllabs.org/codecgraph/) which has not been updated for long time.
 
