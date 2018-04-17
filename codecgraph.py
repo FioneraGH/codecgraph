@@ -77,7 +77,7 @@ class Amplifier:
 			if self.nsteps == 0:
 				level = 1
 			else:
-				#XXX: confirm if this formula is correct
+				# confirm if this formula is correct
 				level = 1-float(average-self.ofs)/(self.nsteps)
 
 		if level < 0: level = 0
@@ -178,8 +178,7 @@ class Node:
 
 			amps = []
 			for i in range(count):
-				amp = Amplifier(caps['ofs'], caps['nsteps'],
-			                        caps['stepsize'], caps['mute'])
+				amp = Amplifier(caps['ofs'], caps['nsteps'], caps['stepsize'], caps['mute'])
 				if len(vals) > i: intvals = [int(v, 16) for v in vals[i].split(' ')]
 				# just in case the "vals" field is
 				# broken in our input file
@@ -207,7 +206,7 @@ class Node:
 	def is_divided(self):
 		if self.type == 'Pin Complex':
 			return True
-		
+
 		return False
 
 	def idstring(self):
@@ -312,17 +311,12 @@ class Node:
 	def additional_attrs(self):
 		default_attrs = [ ('shape', 'box'), ('color', 'black') ]
 		shape_dict = {
-			'Audio Input':[ ('color', 'red'),
-			                ('shape', 'ellipse') ],
-			'Audio Output':[ ('color', 'blue'),
-			                 ('shape', 'ellipse') ],
-			'Pin Complex':[ ('color', 'green'),
-			                ('shape', 'box') ],
-			'Audio Selector':[ ('shape', 'parallelogram'),
-			                   ('orientation', '0')  ],
+			'Audio Input':[ ('color', 'red'), ('shape', 'ellipse') ],
+			'Audio Output':[ ('color', 'blue'), ('shape', 'ellipse') ],
+			'Pin Complex':[ ('color', 'green'), ('shape', 'box') ],
+			'Audio Selector':[ ('shape', 'parallelogram'), ('orientation', '0')  ],
 			'Audio Mixer':[ ('shape', 'hexagon') ],
-			'Unknown Node':[ ('color', 'red'),
-			                 ('shape', 'Mdiamond') ],
+			'Unknown Node':[ ('color', 'red'), ('shape', 'Mdiamond') ],
 		}
 		return shape_dict.get(self.type, default_attrs)
 
@@ -404,7 +398,7 @@ class Node:
 			self.dump_main_output(f)
 			self.dump_in_amps(f)
 			f.write('}\n')
-		else: 
+		else:
 			f.write('subgraph "%s" {\n' % (name))
 			f.write('  pencolor="gray80"\n')
 			self.dump_main(f)
@@ -417,10 +411,10 @@ class Node:
 			else:
 				attrs="[color=gray style=dashed]"
 			f.write('%s -> %s %s;\n' % (origin.out_id(), self.in_id(origin.nid), attrs))
-		
+
 
 re_indent = re.compile("^ *")
- 
+
 class CodecInfo:
 	def __init__(self, f):
 		self.fields = {}
@@ -496,3 +490,4 @@ def main(argv):
 
 if __name__ == '__main__':
 	main(sys.argv)
+
