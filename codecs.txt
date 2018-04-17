@@ -96,6 +96,7 @@ Lenovo Thinkpad SL500		17aa:20f2	Conexant CX20561 (Hermosa)
 Lenovo Thinkpad T60		17aa:2010	Analog Devices AD1981
 Lenovo Thinkpad T61		17aa:20ac	Analog Devices AD1984
 Lenovo Thinkpad W500		17aa:20f2	Conexant CX20561 (Hermosa)
+Lenovo Thinkpad T4700		17aa:2245	Realtek ALC298
 LG P300				1854:0120	Realtek ALC262
 LG LE50				1854:0023	SigmaTel STAC9200
 LG LW20				1854:0018	Realtek ALC880
